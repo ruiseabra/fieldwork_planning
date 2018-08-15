@@ -1,0 +1,45 @@
+shinyServer(function(input, output, session) { 
+  plotHeight <- reactive({ 
+    ii <- sum(input$sh1, input$sh2, input$sh3, input$sh4, input$sh5, input$sh6, input$sh7, input$sh8, input$sh9, input$sh10, input$sh11, input$sh12, input$sh13, input$sh14, input$sh15, input$sh16) 
+    if(!ii) ii <- 1
+    600 / ii
+    })
+  
+  output$plotT  <- renderPlot(top_row)
+  output$plotB  <- renderPlot(XaxisPlot(input$dateRange))
+  
+  output$plot1  <- renderPlot(tidePlot(1 , input$WRK, input$dt1 , input$td1 ,input$dateRange))
+  output$plot2  <- renderPlot(tidePlot(2 , input$WRK, input$dt2 , input$td2 ,input$dateRange))
+  output$plot3  <- renderPlot(tidePlot(3 , input$WRK, input$dt3 , input$td3 ,input$dateRange))
+  output$plot4  <- renderPlot(tidePlot(4 , input$WRK, input$dt4 , input$td4 ,input$dateRange))
+  output$plot5  <- renderPlot(tidePlot(5 , input$WRK, input$dt5 , input$td5 ,input$dateRange))
+  output$plot6  <- renderPlot(tidePlot(6 , input$WRK, input$dt6 , input$td6 ,input$dateRange))
+  output$plot7  <- renderPlot(tidePlot(7 , input$WRK, input$dt7 , input$td7 ,input$dateRange))
+  output$plot8  <- renderPlot(tidePlot(8 , input$WRK, input$dt8 , input$td8 ,input$dateRange))
+  output$plot9  <- renderPlot(tidePlot(9 , input$WRK, input$dt9 , input$td9 ,input$dateRange))
+  output$plot10 <- renderPlot(tidePlot(10, input$WRK, input$dt10, input$td10,input$dateRange))
+  output$plot11 <- renderPlot(tidePlot(11, input$WRK, input$dt11, input$td11,input$dateRange))
+  output$plot12 <- renderPlot(tidePlot(12, input$WRK, input$dt12, input$td12,input$dateRange))
+  output$plot13 <- renderPlot(tidePlot(13, input$WRK, input$dt13, input$td13,input$dateRange))
+  output$plot14 <- renderPlot(tidePlot(14, input$WRK, input$dt14, input$td14,input$dateRange))
+  output$plot15 <- renderPlot(tidePlot(15, input$WRK, input$dt15, input$td15,input$dateRange))
+  output$plot16 <- renderPlot(tidePlot(16, input$WRK, input$dt16, input$td16,input$dateRange))
+  
+  output$ui.plot1 <- renderUI({ plotOutput("plot1", height = plotHeight()) })
+  output$ui.plot2 <- renderUI({ plotOutput("plot2", height = plotHeight()) })
+  output$ui.plot3 <- renderUI({ plotOutput("plot3", height = plotHeight()) })
+  output$ui.plot4 <- renderUI({ plotOutput("plot4", height = plotHeight()) })
+  output$ui.plot5 <- renderUI({ plotOutput("plot5", height = plotHeight()) })
+  output$ui.plot6 <- renderUI({ plotOutput("plot6", height = plotHeight()) })
+  output$ui.plot7 <- renderUI({ plotOutput("plot7", height = plotHeight()) })
+  output$ui.plot8 <- renderUI({ plotOutput("plot8", height = plotHeight()) })
+  output$ui.plot9 <- renderUI({ plotOutput("plot9", height = plotHeight()) })
+  output$ui.plot10 <- renderUI({ plotOutput("plot10", height = plotHeight()) })
+  output$ui.plot11 <- renderUI({ plotOutput("plot11", height = plotHeight()) })
+  output$ui.plot12 <- renderUI({ plotOutput("plot12", height = plotHeight()) })
+  output$ui.plot13 <- renderUI({ plotOutput("plot13", height = plotHeight()) })
+  output$ui.plot14 <- renderUI({ plotOutput("plot14", height = plotHeight()) })
+  output$ui.plot15 <- renderUI({ plotOutput("plot15", height = plotHeight()) })
+  output$ui.plot16 <- renderUI({ plotOutput("plot16", height = plotHeight()) })
+})
+
